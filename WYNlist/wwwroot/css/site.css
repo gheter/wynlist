@@ -1,0 +1,33 @@
+﻿/*input {
+    width: auto;
+}
+
+#loginToggle {
+    cursor: pointer;
+}
+
+.popup-Form{
+    padding: 5px;
+    border: 2px black inset;
+    display: inline-block;
+}
+
+.popup-Form input{
+    width: 200px;
+}
+
+    .popup-Form label {
+        width: 150px;
+    }
+
+menu li {
+    display: inline;
+}
+
+menu li::after{
+    content: ' |';
+}
+
+menu li:last-of-type::after {
+    content: "";
+}*/

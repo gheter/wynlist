@@ -1,0 +1,16 @@
+{
+  "connectionStrings": {
+    "WynlistConnectionString": "server=DESKTOP-MEE4I6D\\SQLEXPRESS;Database=Wynlist;Integrated Security=true;MultipleActiveResultSets=true"
+  },
+  "Logging": {
+    "LoggingLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "Tokens": {
+    "Key": "a:asdasdff:sdfh;sdsadfd",
+    "Issuer": "localhost",
+    "Audience": "users"
+  }
+}

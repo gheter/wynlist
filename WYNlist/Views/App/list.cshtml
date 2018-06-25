@@ -1,0 +1,15 @@
+﻿@model IEnumerable<List>
+<h1>Lists</h1>
+<p>Count: @Model.Count()</p>
+@foreach (var p in Model)
+{
+
+    <div class="col-md-3">
+        <div class="well well-sm">
+            <h3>@p.ListName</h3>
+            <ul class="">
+                <li></li>
+            </ul>
+        </div>
+    </div>
+}

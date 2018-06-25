@@ -1,0 +1,11 @@
+C:\Users\gheter\source\repos\WYNlist\WYNlist\bin\Debug\netcoreapp2.0\WYNlist.deps.json
+C:\Users\gheter\source\repos\WYNlist\WYNlist\bin\Debug\netcoreapp2.0\WYNlist.runtimeconfig.json
+C:\Users\gheter\source\repos\WYNlist\WYNlist\bin\Debug\netcoreapp2.0\WYNlist.runtimeconfig.dev.json
+C:\Users\gheter\source\repos\WYNlist\WYNlist\bin\Debug\netcoreapp2.0\WYNlist.dll
+C:\Users\gheter\source\repos\WYNlist\WYNlist\bin\Debug\netcoreapp2.0\WYNlist.pdb
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.csproj.CoreCompileInputs.cache
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.AssemblyInfoInputs.cache
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.AssemblyInfo.cs
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.dll
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.pdb
+C:\Users\gheter\source\repos\WYNlist\WYNlist\obj\Debug\netcoreapp2.0\WYNlist.csprojAssemblyReference.cache
