@@ -12,7 +12,6 @@ namespace Wynlist.Data.Entities
         [Key]
         public int Id { get; set; }
         public Recipe Recipe { get; set; }
-        [Required]
         public int RecipeId { get; set; }
         public Item Item { get; set; }
         public int ItemId { get; set; }

@@ -10,7 +10,6 @@ namespace WYNlist.ViewModels
     public class ListViewModel
     {
         public int ListId { get; set; }
-        [Required]
         public string ListName { get; set; }
         public int ListTypeId { get; set; }
     }

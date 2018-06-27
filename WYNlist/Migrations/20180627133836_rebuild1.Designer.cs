@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Wynlist.Data;
 
-namespace Wynlist.Migrations
+namespace WYNlist.Migrations
 {
     [DbContext(typeof(WynlistContext))]
-    [Migration("20180620184835_User2")]
-    partial class User2
+    [Migration("20180627133836_rebuild1")]
+    partial class rebuild1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -214,7 +214,13 @@ namespace Wynlist.Migrations
 
                     b.Property<int>("ListItemChecked");
 
+                    b.Property<string>("ListItemCost");
+
                     b.Property<int>("ListItemPriority");
+
+                    b.Property<string>("ListItemQty");
+
+                    b.Property<int>("ListItemStoreId");
 
                     b.Property<int>("RecipeId");
 

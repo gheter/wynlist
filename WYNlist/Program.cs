@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Wynlist.Data;
 
 namespace Wynlist
 {
@@ -29,9 +32,11 @@ namespace Wynlist
             builder.Sources.Clear();
 
             builder.AddJsonFile("config.json", false, true);
-                   //.AddXmlFile("config.xml", true)
-                   //.AddEnvironmentVariables();
+            //.AddXmlFile("config.xml", true)
+            //.AddEnvironmentVariables();
 
         }
+
+
     }
 }

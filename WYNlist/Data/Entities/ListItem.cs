@@ -11,13 +11,10 @@ namespace Wynlist.Data.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public WynUser User { get; set; }
         public List List { get; set; }
-        [Required]
         public int ListId { get; set; }
         public Item Item { get; set; }
-        [Required]
         public int ItemId { get; set; }
         public Recipe Recipe { get; set; }
         public int RecipeId { get; set; }

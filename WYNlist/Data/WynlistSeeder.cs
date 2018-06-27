@@ -44,7 +44,7 @@ namespace Wynlist.Data
                     Email = "gabeheter@hotmail.com"
                 };
 
-                var result = await _userManager.CreateAsync(user, "Gabe_ki11");
+                var result = await _userManager.CreateAsync(user, "Password!123");
                 if (result != IdentityResult.Success)
                 {
                     throw new InvalidOperationException("Failed to creat default User");
@@ -80,7 +80,7 @@ namespace Wynlist.Data
                 {
                     User = user,
                     ListName = "My Grocery",
-                    ListTypeId = 5          
+                    ListTypeId = 1          
                 };
 
                 _ctx.Lists.Add(list);

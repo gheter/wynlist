@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using Wynlist.Data;
 
-namespace Wynlist.Migrations
+namespace WYNlist.Migrations
 {
     [DbContext(typeof(WynlistContext))]
     partial class WynlistContextModelSnapshot : ModelSnapshot
@@ -213,7 +213,13 @@ namespace Wynlist.Migrations
 
                     b.Property<int>("ListItemChecked");
 
+                    b.Property<string>("ListItemCost");
+
                     b.Property<int>("ListItemPriority");
+
+                    b.Property<string>("ListItemQty");
+
+                    b.Property<int>("ListItemStoreId");
 
                     b.Property<int>("RecipeId");
 

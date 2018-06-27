@@ -11,7 +11,6 @@ namespace Wynlist.Data.Entities
     {
         [Key]
         public int Id { get; set; }
-        [Required]
         public string ItemCategoryName { get; set; }
     }
 }
