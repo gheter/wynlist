@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using Wynlist.Data.Entities;
 
 namespace Wynlist.Data
@@ -28,6 +29,7 @@ namespace Wynlist.Data
         //Need to add Stores and Items to this later
 
         bool SaveAll();
+        Task<bool> SaveAllAsync();
 
         void AddEntity(object model);
 

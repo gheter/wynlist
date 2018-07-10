@@ -1,9 +1,16 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Wynlist.Data;
 using Wynlist.Data.Entities;
 using Wynlist.Services;
 using Wynlist.ViewModels;
+using WYNlist.Controllers;
+using WYNlist.ViewModels;
 
 namespace Wynlist.Controllers
 {
@@ -11,11 +18,15 @@ namespace Wynlist.Controllers
     {
         private readonly IMailService _mailService;
         private readonly IWynlistRespository _repository;
+        private readonly ILogger<AccountController> _logger;
 
-        public AppController(IMailService mailService, IWynlistRespository repository)
+        public AppController(IMailService mailService, 
+            IWynlistRespository repository, 
+            ILogger<AccountController> logger)
         {
             _repository = repository;
             this._mailService = mailService;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -94,6 +105,25 @@ namespace Wynlist.Controllers
             //OR with LINQ
             //var username = User.Identity.Name;
             var results = _repository.GetAllRecipes(User.Identity.Name);
+
+            return View(results);
+        }
+
+        [Authorize]
+        public IActionResult RecipeDetails(int id)
+        {
+            //var username = User.Identity.Name;
+            var results = _repository.GetRecipeById(User.Identity.Name, id);
+
+            return View(results);
+        }
+
+        [Authorize]
+        [HttpGet("RecipeEdit")]
+        public IActionResult RecipeEdit(int id)
+        {
+            //var username = User.Identity.Name;
+            var results = _repository.GetRecipeById(User.Identity.Name, id);
 
             return View(results);
         }

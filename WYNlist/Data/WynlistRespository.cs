@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Wynlist.Data.Entities;
 
 namespace Wynlist.Data
@@ -23,6 +24,11 @@ namespace Wynlist.Data
         public bool SaveAll() //SAVE ALL
         {
             return _ctx.SaveChanges() > 0;
+        }
+
+        public async Task<bool> SaveAllAsync() //SAVE ALL ASYNC
+        {
+            return (await _ctx.SaveChangesAsync()) > 0;
         }
 
         public void AddEntity(object model)

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Net;
 using Microsoft.AspNetCore.Identity;
 using Wynlist.Data;
 using Wynlist.Data.Entities;
@@ -45,7 +46,7 @@ namespace Wynlist.Controllers
             }
         }
 
-        [HttpGet("{id:int}")] //Get Recipe by Id
+        [HttpGet("{recipeId:int}")] //Get Recipe by Id
         public IActionResult Get(int recipeId)
         {
             try
@@ -59,8 +60,8 @@ namespace Wynlist.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Failed to get Recipe: {ex}");
-                return BadRequest("Filed to get Recipe");
             }
+            return BadRequest("Filed to get Recipe");
         }
 
         [HttpPost] //Add a new Recipe to the Db
@@ -91,8 +92,33 @@ namespace Wynlist.Controllers
             {
                 _logger.LogError($"Failed to save new Recipe: {ex}");
             }
-
             return BadRequest("Failed to save new Recipe");
+        }
+
+        [HttpPut("{recipeId:int}")]
+        public async Task<IActionResult> Put(int recipeId, [FromBody] RecipeViewModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
+
+                var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
+                var oldRecipe = _respository.GetRecipeById(User.Identity.Name, recipeId);
+                if (oldRecipe == null) return NotFound($"Could not find a recipe with ID of {recipeId}");
+
+                _mapper.Map(model, oldRecipe);
+
+                if (_respository.SaveAll())
+                {
+                    return Ok(_mapper.Map<RecipeViewModel>(oldRecipe));
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to update Recipe: {ex}");
+            }
+
+            return BadRequest("Couldn't update recipe");
         }
     }
 }
